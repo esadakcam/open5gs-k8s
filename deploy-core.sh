@@ -29,6 +29,13 @@ fi
 
 print_header "Preparing cluster for 5G network deployment"
 
+print_subheader "Checking if the persistent volume is available"
+kubectl get pv local-pv 2>/dev/null || {
+    mkdir -p /tmp/persistent
+    kubectl apply -k persistent-volume
+    print_success "Persistent volume created."
+}
+
 print_subheader "Checking if namespace '$NAMESPACE' exists"
 kubectl get namespace $NAMESPACE 2>/dev/null || {
     print_error "Namespace '$NAMESPACE' not found. Creating it now..."
