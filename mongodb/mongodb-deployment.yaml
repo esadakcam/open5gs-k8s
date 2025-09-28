@@ -22,7 +22,7 @@ spec:
         sysctls: []
       containers:
         - name: mongodb
-          image: docker.io/bitnami/mongodb:4.4.4-debian-10-r0
+          image: docker.io/bitnami/mongodb:4.4.29
           imagePullPolicy: "IfNotPresent"
           securityContext:
             runAsNonRoot: true
@@ -82,4 +82,4 @@ spec:
         resources:
           requests:
             storage: "6Gi"
-        # storageClassName: local-storage
+        storageClassName: local-storage
