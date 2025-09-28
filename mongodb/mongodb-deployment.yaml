@@ -22,7 +22,7 @@ spec:
         sysctls: []
       containers:
         - name: mongodb
-          image: docker.io/bitnami/mongodb:4.4.29
+          image: docker.io/bitnami/mongodb:4.4.15
           imagePullPolicy: "IfNotPresent"
           securityContext:
             runAsNonRoot: true
